@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>진주(晉州) — 남강과 성곽의 도시</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="brand">晉州 <span>진주</span></div>
+</nav>
+
+<header class="hero">
+  <div class="lanterns" id="lanterns" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">Culture &amp; Heritage of Jinju</span>
+    <h1>남강은 흐르고,<br>성은 그 자리에 남았다</h1>
+    <p class="lede">
+      임진왜란의 함성이 서린 진주성과 촉석루, 순국의 넋을 기린 유등의 불빛,
+      그리고 궁중의 몸짓을 오늘에 전하는 진주검무까지 —
+      진주의 문화와 유적지를 소개합니다.
+    </p>
+  </div>
+</header>
+
+<main>
+  <section aria-label="소개 항목">
+    <h2 class="section-title"><span class="no">Ⅰ.</span>네 가지 이야기</h2>
+    <p class="lede-body muted" style="max-width:640px;">
+      각 항목을 눌러 역사, 유래, 오늘날의 모습을 자세히 살펴보세요.
+      모든 내용의 출처는 각 상세 페이지 하단에 표기되어 있습니다.
+    </p>
+
+    <div class="grid" style="margin-top:2rem;">
+      <a class="card" href="jinjuseong/index.html">
+        <span class="tag">국가지정 사적 제118호</span>
+        <h3>진주성과 촉석루</h3>
+        <p>남강 벼랑 위에 우뚝 선 진주성의 지휘소, 촉석루. 임진왜란 진주대첩의 현장을 만나봅니다.</p>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="card" href="nongae/index.html">
+        <span class="tag">임진왜란과 진주대첩</span>
+        <h3>논개와 의암</h3>
+        <p>제2차 진주성 전투와 논개의 순국, 그리고 그 넋을 기리는 의기사 이야기.</p>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="card" href="yudeung/index.html">
+        <span class="tag">대한민국 대표 축제</span>
+        <h3>진주남강유등축제</h3>
+        <p>군사 신호로 띄우던 등불이 오늘날 세계가 찾는 빛 축제로 이어진 이야기.</p>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="card" href="geommu/index.html">
+        <span class="tag">국가무형유산 제12호</span>
+        <h3>진주검무</h3>
+        <p>궁중 검무의 원형을 그대로 간직한, 진주 교방에서 전해 내려온 여성 칼춤.</p>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  진주(晉州) 문화유적 소개 페이지 · 각 항목의 출처는 해당 상세 페이지 하단에 표기되어 있습니다.
+</footer>
+
+<script>
+  // 시그니처 요소: 남강에 떠오르는 유등(流燈) — 은은하게 위로 떠오르는 빛
+  const layer = document.getElementById('lanterns');
+  const COUNT = 14;
+  for(let i=0;i<COUNT;i++){
+    const el = document.createElement('div');
+    el.className = 'lantern';
+    const left = Math.random()*100;
+    const delay = Math.random()*18;
+    const duration = 14 + Math.random()*10;
+    const drift = (Math.random()*60-30).toFixed(0)+'px';
+    el.style.left = left+'%';
+    el.style.animationDelay = delay+'s';
+    el.style.animationDuration = duration+'s';
+    el.style.setProperty('--drift', drift);
+    layer.appendChild(el);
+  }
+</script>
+</body>
+</html>
